@@ -50,7 +50,6 @@
 //   );
 // }
 
-// export default App;
 import React, { useState } from "react";
 import axios from "axios";
 import "./App.css"; // Include this if you'd like to manage styles in a separate CSS file
@@ -81,7 +80,7 @@ function App() {
     }
   };
 
-  // Reset the state for next video upload
+  // Reset the state for the next video upload
   const handleDownload = () => {
     setVideoFile(null);
     setAudioUrl("");
