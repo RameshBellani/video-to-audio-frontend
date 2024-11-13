@@ -51,8 +51,6 @@
 // }
 
 // export default App;
-
-
 import React, { useState } from "react";
 import axios from "axios";
 import "./App.css"; // Include this if you'd like to manage styles in a separate CSS file
@@ -104,7 +102,12 @@ function App() {
       {audioUrl && (
         <div className="download-section">
           <h3>Your Audio is Ready:</h3>
-          <a href={audioUrl} download="audio.mp3" className="download-button" onClick={handleDownload}>
+          <a 
+            href={audioUrl} 
+            download="audio.mp3" 
+            className="download-button" 
+            onClick={handleDownload}
+          >
             Download Audio
           </a>
         </div>
