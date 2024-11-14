@@ -49,14 +49,14 @@
 //     </div>
 //   );
 // }
-
 import React, { useState } from "react";
 import axios from "axios";
-import "./App.css"; // Include this if you'd like to manage styles in a separate CSS file
+import "./App.css"; // Ensure this file contains your .loader styles
 
 function App() {
   const [videoFile, setVideoFile] = useState(null);
   const [audioUrl, setAudioUrl] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleFileChange = (e) => {
     setVideoFile(e.target.files[0]);
@@ -69,6 +69,7 @@ function App() {
       return;
     }
 
+    setIsLoading(true); // Start loading
     const formData = new FormData();
     formData.append("video", videoFile);
 
@@ -77,10 +78,11 @@ function App() {
       setAudioUrl(response.data.audio_url);
     } catch (error) {
       console.error("Error extracting audio:", error);
+    } finally {
+      setIsLoading(false); // Stop loading once the request is complete
     }
   };
 
-  // Reset the state for the next video upload
   const handleDownload = () => {
     setVideoFile(null);
     setAudioUrl("");
@@ -98,6 +100,9 @@ function App() {
         />
         <button type="submit" className="upload-button">Extract Audio</button>
       </form>
+
+      {/* Loader display */}
+      {isLoading && <div className="loader"></div>}
       {audioUrl && (
         <div className="download-section">
           <h3>Your Audio is Ready:</h3>

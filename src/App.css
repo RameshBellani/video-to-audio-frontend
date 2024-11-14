@@ -107,3 +107,58 @@
 .download-button:hover {
   background-color: #0b7dda;
 }
+
+/* App.css */
+.app {
+  text-align: center;
+  padding: 20px;
+}
+
+.title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.form {
+  margin-bottom: 20px;
+}
+
+.file-input {
+  margin-bottom: 10px;
+}
+
+.upload-button {
+  padding: 8px 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.loader {
+  width: 120px;
+  height: 20px;
+  border-radius: 20px;
+  background:
+   repeating-linear-gradient(135deg,#f03355 0 10px,#ffa516 0 20px) 0/0%   no-repeat,
+   repeating-linear-gradient(135deg,#ddd    0 10px,#eee    0 20px) 0/100%;
+  animation: l3 2s infinite;
+  margin: 20px auto;
+}
+
+@keyframes l3 {
+  100% {background-size:100%}
+}
+
+.download-section {
+  margin-top: 20px;
+}
+
+.download-button {
+  padding: 8px 16px;
+  background-color: #008CBA;
+  color: white;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+}
